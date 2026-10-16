@@ -7,7 +7,7 @@ Egyoldalas (landing page) bemutatkozó weboldal Horváth György ICD‑ és inte
 ```
 index.html        – a teljes oldal (szekciók: Bemutatkozás, Szemlélet, ICD, Kranioszakrális, Történetem, Kapcsolat)
 css/style.css     – stílusok (türkiz + természetes színek, reszponzív)
-js/main.js        – mobil menü, aktív menüpont, görgetési animáció, jegyzetkapcsoló, űrlap
+js/main.js        – mobil menü, aktív menüpont, görgetési animáció, jegyzetkapcsoló
 images/           – fotók (portré + kezelésképek)
 ```
 
@@ -21,5 +21,5 @@ A végleges verzióhoz:
 
 1. a `<aside class="note">` és `.note--inline` elemeket töröljük az `index.html`‑ből,
 2. a `#notes-toggle` gombot és a hozzá tartozó JS/CSS részt eltávolítjuk,
-3. a kapcsolati adatokat (telefon, e‑mail, cím) és az űrlap bekötését (jelenleg `mailto:`) véglegesítjük,
+3. a budapesti rendelés címét és a Facebook/Instagram linkeket bekötjük,
 4. elkészítjük az adatkezelési tájékoztatót és az impresszumot.

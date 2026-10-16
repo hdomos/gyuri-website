@@ -1,5 +1,5 @@
 /* Horváth György – landing page
-   Navigáció, görgetés, megjelenési animációk, jegyzetkapcsoló, űrlap */
+   Navigáció, görgetés, megjelenési animációk, jegyzetkapcsoló */
 (function () {
   'use strict';
 
@@ -98,34 +98,6 @@
       var hidden = !document.body.classList.contains('notes-hidden');
       applyNotes(hidden);
       try { localStorage.setItem(NOTES_KEY, hidden ? '1' : '0'); } catch (e) { /* privát mód */ }
-    });
-  }
-
-  /* ---- Kapcsolati űrlap (ideiglenes: mailto) ---- */
-  var form = document.getElementById('contact-form');
-  if (form) {
-    var status = form.querySelector('.form-status');
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
-      var get = function (n) { var el = form.elements[n]; return el ? el.value.trim() : ''; };
-      var subject = 'Érdeklődés a weboldalról' + (get('topic') ? ' – ' + get('topic') : '');
-      var body = [
-        'Név: ' + get('name'),
-        'E-mail: ' + get('email'),
-        'Telefon: ' + (get('phone') || '–'),
-        'Érdeklődés: ' + (get('topic') || '–'),
-        '',
-        get('message')
-      ].join('\n');
-      var to = (document.querySelector('a[href^="mailto:"]') || {}).getAttribute
-        ? document.querySelector('a[href^="mailto:"]').getAttribute('href').replace('mailto:', '')
-        : '';
-      window.location.href = 'mailto:' + to + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-      if (status) status.textContent = 'Megnyitjuk a levelezőprogramodat az üzenettel. Ha nem nyílt meg, kérlek, írj közvetlenül e‑mailben.';
     });
   }
 
