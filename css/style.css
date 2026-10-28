@@ -28,11 +28,6 @@
   --ink-mute: #7a8a8a;
   --line: #dfe6e3;
 
-  /* Jegyzetek */
-  --note-bg: #fff6e0;
-  --note-border: #e9b949;
-  --note-ink: #6b4b00;
-
   --font-display: "Fraunces", Georgia, "Times New Roman", serif;
   --font-body: "Nunito Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 
@@ -678,7 +673,6 @@ section[id], article[id] { scroll-margin-top: calc(var(--header-h) + 8px); }
 .contact-list li { align-items: flex-start; }
 .contact-list li > div { min-width: 0; }
 .contact-list .contact-icon { margin-top: 0.1rem; }
-.contact-list .note--inline { margin-top: 0.5rem; }
 
 .contact-side { display: grid; gap: 1.2rem; }
 .booking-card, .price-card {
@@ -707,7 +701,6 @@ section[id], article[id] { scroll-margin-top: calc(var(--header-h) + 8px); }
 .price-list dt { color: var(--ink); font-weight: 600; }
 .price-list dd { margin: 0; font-family: var(--font-display); font-size: 1.25rem; color: var(--turquoise-deep); white-space: nowrap; font-variant-numeric: tabular-nums; }
 .price-foot { margin: 0.8rem 0 0; font-size: 0.9rem; color: var(--ink-mute); }
-.price-card .note--inline { margin-top: 0.9rem; }
 
 .facts { list-style: none; padding: 0; margin: 0.4rem 0 0; display: grid; gap: 0.5rem; }
 .facts li { position: relative; padding-left: 1.4rem; color: var(--ink-soft); }
@@ -733,81 +726,10 @@ section[id], article[id] { scroll-margin-top: calc(var(--header-h) + 8px); }
 .footer-name { font-family: var(--font-display); font-size: 1.4rem; color: #fff; margin: 0 0 0.2rem; }
 .footer-sub { margin: 0; font-size: 0.9rem; color: rgba(255, 255, 255, 0.6); }
 .footer-links, .footer-legal { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.4rem; }
-.footer-social { margin-top: 0.6rem; color: rgba(255, 255, 255, 0.55); }
-.footer-social .note--inline { margin-top: 0.3rem; }
 .site-footer a { color: rgba(255, 255, 255, 0.8); text-decoration: none; }
 .site-footer a:hover { color: #9fe6e1; }
 .footer-bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem 2rem; padding-top: 1.2rem; font-size: 0.85rem; color: rgba(255, 255, 255, 0.55); }
 .footer-bottom p { margin: 0; }
-
-/* ---------- Szerkesztői jegyzetek ---------- */
-.note {
-  background: var(--note-bg);
-  border: 1.5px dashed var(--note-border);
-  border-radius: var(--radius-sm);
-  padding: 1rem 1.2rem;
-  margin: 1.4rem 0;
-  color: var(--note-ink);
-  font-size: 0.93rem;
-  line-height: 1.55;
-}
-.note-label {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-weight: 700;
-  font-size: 0.78rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin-bottom: 0.5rem;
-}
-.note-label::before {
-  content: "?";
-  display: inline-flex;
-  width: 20px; height: 20px;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: var(--note-border);
-  color: #fff;
-  font-size: 0.75rem;
-  font-weight: 800;
-}
-.note p:last-child, .note ul, .note ol { margin-bottom: 0; }
-.note ul, .note ol { padding-left: 1.2rem; }
-.note li { margin-bottom: 0.3rem; }
-.note li:last-child { margin-bottom: 0; }
-.note--inline {
-  display: block;
-  margin: 0.4rem 0 0;
-  padding: 0.5rem 0.8rem;
-  font-size: 0.85rem;
-}
-
-body.notes-hidden .note { display: none !important; }
-
-.notes-toggle {
-  position: fixed;
-  right: 1rem;
-  bottom: 1rem;
-  z-index: 60;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
-  padding: 0.65rem 1rem;
-  border-radius: 999px;
-  border: 1.5px solid var(--note-border);
-  background: var(--note-bg);
-  color: var(--note-ink);
-  font: inherit;
-  font-size: 0.85rem;
-  font-weight: 700;
-  cursor: pointer;
-  box-shadow: var(--shadow-soft);
-}
-.notes-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--note-border); }
-body.notes-hidden .notes-toggle { background: #fff; border-color: var(--line); color: var(--ink-soft); }
-body.notes-hidden .notes-dot { background: var(--line); }
 
 /* ---------- Megjelenés görgetéskor ---------- */
 .reveal {
@@ -842,5 +764,4 @@ body.notes-hidden .notes-dot { background: var(--line); }
   .footer-inner { grid-template-columns: 1fr; }
   .brand-sub { display: none; }
   .hero-inner { padding-bottom: 6rem; }
-  .notes-toggle { right: 0.75rem; bottom: 0.75rem; }
 }

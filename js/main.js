@@ -80,27 +80,6 @@
     reveals.forEach(function (el) { el.classList.add('is-visible'); });
   }
 
-  /* ---- Szerkesztői jegyzetek ki/be ---- */
-  var notesToggle = document.getElementById('notes-toggle');
-  var NOTES_KEY = 'gyuri-notes-hidden';
-  function applyNotes(hidden) {
-    document.body.classList.toggle('notes-hidden', hidden);
-    if (!notesToggle) return;
-    notesToggle.setAttribute('aria-pressed', hidden ? 'false' : 'true');
-    var txt = notesToggle.querySelector('.notes-toggle-text');
-    if (txt) txt.textContent = hidden ? 'Jegyzetek megjelenítése' : 'Jegyzetek elrejtése';
-  }
-  var stored = false;
-  try { stored = localStorage.getItem(NOTES_KEY) === '1'; } catch (e) { stored = false; }
-  applyNotes(stored);
-  if (notesToggle) {
-    notesToggle.addEventListener('click', function () {
-      var hidden = !document.body.classList.contains('notes-hidden');
-      applyNotes(hidden);
-      try { localStorage.setItem(NOTES_KEY, hidden ? '1' : '0'); } catch (e) { /* privát mód */ }
-    });
-  }
-
   /* ---- Évszám a láblécben ---- */
   var year = document.getElementById('year');
   if (year) year.textContent = String(new Date().getFullYear());
